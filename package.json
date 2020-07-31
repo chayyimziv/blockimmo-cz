@@ -1,0 +1,57 @@
+{
+  "name": "@blockimmo/contracts",
+  "version": "2.1.2",
+  "description": "The smart contracts powering blockimmo",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "scripts/build.sh",
+    "compile": "truffle compile",
+    "console": "truffle console",
+    "coverage": "scripts/coverage.sh",
+    "flatten": "solidity_flattener --solc-paths=\"openzeppelin-solidity=/Users/michael/Documents/openzeppelin-solidity\" contracts/TokenizedProperty.sol",
+    "lint": "npm run lint:js && npm run lint:sol",
+    "lint:fix": "npm run lint:js:fix",
+    "lint:js": "eslint .",
+    "lint:js:fix": "eslint . --fix",
+    "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\"",
+    "version": "scripts/version.js",
+    "test": "npm run compile && scripts/test.sh"
+  },
+  "author": "Michael Dietz",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.7",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-mocha-no-only": "^1.1.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "ethereumjs-util": "^6.0.0",
+    "ganache-cli": "^6.7.0",
+    "ganache-cli-coverage": "github:Agusx1211/ganache-cli#c462b3fc48fe9b16756f7799885c0741114d9ed3",
+    "openzeppelin-solidity": "git://github.com/blockimmo-ch/openzeppelin-solidity.git#master",
+    "openzeppelin-test-helpers": "^0.3.2",
+    "solhint": "^1.5.0",
+    "solidity-coverage": "github:rotcivegaf/solidity-coverage#5875f5b7bc74d447f3312c9c0e9fc7814b482477",
+    "truffle": "^5.0.40"
+  },
+  "dependencies": {
+    "web3": "^1.2.1"
+  },
+  "files": [
+    "build/contracts/IERC20.json",
+    "build/contracts/KyberNetworkProxyInterface.json",
+    "build/contracts/LandRegistry.json",
+    "build/contracts/PaymentsLayer.json",
+    "build/contracts/TokenizedProperty.json",
+    "build/contracts/TokenSale.json",
+    "build/contracts/uniswap_exchange.json",
+    "build/contracts/Whitelist.json",
+    "api.js"
+  ]
+}
